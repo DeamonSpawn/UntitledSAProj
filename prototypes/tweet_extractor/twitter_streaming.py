@@ -15,7 +15,7 @@ consumer_secret = ""
 class StdOutListener(StreamListener):
 
     def on_data(self, data):
-        print (data)
+        print (str(time.time())+'::'+data.split(',"text":""')[1].split('","source')[0])
         return True
     def on_error(self, status):
         print (status)

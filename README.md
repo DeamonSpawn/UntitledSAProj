@@ -36,5 +36,10 @@ based on the fix proposed
 
    [Handle content-type header charset value for streaming API #635] (https://github.com/tweepy/tweepy/issues/635)
    
+Output of the tweet stream is in the JSON format from which the "text:" specifies the tweet which is extracted from the JSON text.
+
+
+
+
 
  
