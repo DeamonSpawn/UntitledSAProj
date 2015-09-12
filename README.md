@@ -30,7 +30,7 @@ __Modifications made:__
 
 Modified tweepys existing [streaming.py] (https://github.com/tweepy/tweepy/blob/master/tweepy/streaming.py) 
 
-    [Modified version here] (https://github.com/DeamonSpawn/UntitledSAProj/blob/master/prototypes/tweet_extractor/twitter_streaming.py)
+   of which this is the [modified version] (https://github.com/DeamonSpawn/UntitledSAProj/blob/master/prototypes/tweet_extractor/twitter_streaming.py)
 
 based on the fix proposed 
 
