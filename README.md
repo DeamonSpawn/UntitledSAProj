@@ -38,6 +38,9 @@ based on the fix proposed
    
 Output of the tweet stream is in the JSON format from which the "text:" specifies the tweet which is extracted from the JSON text.
 
+_Output_
+Output at this stage looks [like this] (https://github.com/DeamonSpawn/UntitledSAProj/blob/debec75d722f92d299655e7949db6e8f53d9221f/Output%20Samples/tweetsansJSON.txt)
+
 
 
 
