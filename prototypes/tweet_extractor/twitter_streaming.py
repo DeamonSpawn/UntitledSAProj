@@ -4,6 +4,7 @@ from __future__ import absolute_import, print_function
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
+import time
 #Variables that contains the user credentials to access Twitter API 
 access_token = ""
 access_token_secret = ""
@@ -15,10 +16,10 @@ consumer_secret = ""
 class StdOutListener(StreamListener):
 
     def on_data(self, data):
-        print (str(time.time())+'::'+data.split(',"text":""')[1].split('","source')[0])
+        print (str(time.time())+'::'+data.split(',"text":"')[1].split('","source')[0])
         return True
     def on_error(self, status):
-        print (status)
+        print (status + '\n')
 
 if __name__ == '__main__':
 
