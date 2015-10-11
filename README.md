@@ -40,7 +40,7 @@ Output of the tweet stream is in the JSON format from which the "text:" specifie
 _Output:_
 Output is stored to a [output text file](https://github.com/DeamonSpawn/UntitledSAProj/blob/debec75d722f92d299655e7949db6e8f53d9221f/Output%20Samples/tweetsansJSON.txt) using
  
-    twitter_streaming.py >> output.txt 
+    python twitter_streaming.py >> output.txt 
 
 The extraction process can be allowed to run until the rate limitation by twitter occurs alternatively the process can be interrupted using
 
