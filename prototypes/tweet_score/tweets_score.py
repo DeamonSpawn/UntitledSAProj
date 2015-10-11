@@ -55,9 +55,9 @@ def evaluate(source,pos_source,neg_source):
     for line in f:    
         tokenized = nltk.word_tokenize(line)
         for token in tokenized:
-            if (in_trie(postrie , token)):
+            if (in_trie(postrie , token.lower())):
                 pscore=pscore+1
-            elif (in_trie(negtrie , token)):
+            elif (in_trie(negtrie , token.lower())):
                 nscore=nscore+1
             else:
                 continue
