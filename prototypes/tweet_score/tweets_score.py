@@ -49,6 +49,9 @@ def load_wordbank(source):
 def evaluate(source,pos_source,neg_source):
     pscore=0
     nscore=0
+    pcount=0
+    ncount=0
+    unknwn=0
     postrie = make_trie(load_wordbank(pos_source))
     negtrie = make_trie(load_wordbank(neg_source))
     f = open(source,'r')
@@ -61,7 +64,16 @@ def evaluate(source,pos_source,neg_source):
                 nscore=nscore+1
             else:
                 continue
-    print(pscore)
-    print(nscore)
+        if(pscore>nscore):
+            pcount=pcount+1
+        elif(nscore>pscore):
+            ncount=ncount+1
+        else:
+            unknwn=unknwn+1
+        pscore=0
+        nscore=0
+    print("positive =", pcount)
+    print("negative =", ncount)
+    print("unknown =", unknwn)
 evaluate('tweetsansJSON.txt','positive-words.txt','negative-words.txt')
  

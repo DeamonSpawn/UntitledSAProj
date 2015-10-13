@@ -100,7 +100,6 @@ Test Code: To evaluate our twitter tweets positive and negative sentiments we im
 
 _Output_
  
-    97
-    29
-
- 
+positive = 78
+negative = 20
+unknown = 120
