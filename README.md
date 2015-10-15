@@ -59,14 +59,67 @@ NLTK dependancies:
 
 Numpy - Requires a GNU compiler like [MinGW](http://www.mingw.org/wiki/Getting_Started) or [Visual Studio 2013 or higher](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx) installed
 
-Using Visual Studio:
+__Using Visual Studio:__
 The Numpy installation looks for the Visual Studio file _vcvarsall.bat_ by default,
 and installing Visual Studio is sufficient to meet this requirement and install Numpy
     
-Using MinGW:
+__Using MinGW:__
 
 - [Install MinGW](http://www.mingw.org/wiki/Getting_Started) with C++ Compiler option checked
 - Add C:\MinGW\bin to your PATH
+
+__Installing MinGW and MSYS__
+
+Download and run mingw-get-inst (the download link above).
+Select "Use pre-packaged repository catalogues".
+Review and accept the License agreement.
+Please note that MinGW should be installed to a directory path that doesn't contain any spaces. This method has been tested with a directory path of C:\MinGW.
+Select C++ Compiler and MSYS Basic System as optional components.
+Wait until every package has been downloaded and installation is finished.
+
+__Setting up MSYS__
+
+Go to your MSYS folder (found at <MinGW installation folder>\msys\1.0, C:\MinGW\msys\1.0 in this example), open etc\fstab with a text editor (for example Notepad) and add the following line at the end of the file:
+
+    C:\MinGW\   /usr/local
+
+On Windows Vista and newer, you'll need additional steps to make MSYS fully work if User Account Control is enabled (it is by default).
+
+Go to your MSYS folder (C:\MinGW\msys\1.0 here), open msys.bat with a text editor (right-click -> Open With -> Notepad or equivalents) and add the following line after   @echo off:
+
+    cd "C:\MinGW\msys\1.0"
+
+
+And if your MSYS installation drive is not the disk Windows is installed on, add one more line:
+
+    C:(MSYS drive)
+
+After saving the file, right click on _msys.bat_ and choose "Run as Administrator".
+You will need to do this every time you run MSYS. 
+After that, programs requiring admin rights (such as install and patch) will work.
+Testing MinGW/MSYS installation
+
+Open the MinGW shell (MSYS) by running msys.bat.
+Run the following commands:
+
+    make -v
+    gcc -v
+    
+They should output something. Check if something goes wrong.
+Compilation and installation of the required packages
+ 
+To compile and install these packages and avoid the error 'wget: command not found', first you need to install the following commands: 
+(To compile on Windows 7, the service "application experience" must be activated and running)
+
+IN MSYS:
+
+    mingw-get install msys-wget
+    mingw-get install msys-unzip
+    mingw-get install msys-patch
+
+If you get following error: configure: error: cannot run C compiled programs. 
+, one of the reasons could be your anti-virus, that silently deletes a.exe binary files. 
+Try to temporarily disable anti-virus software and compile again
 
 - In PYTHONPATH\Lib\distutils, create a file distutils.cfg and add these lines:
     
@@ -103,3 +156,68 @@ _Output_
 positive = 78
 negative = 20
 unknown = 120
+
+Plotting the sentiment analysis using Matplotlib
+===============================================
+__Libraries used so far:__
+ 
+ For Python 3.4 and above
+
+ __For Windows:__
+
+ Required Dependencies
+
+- numpy 1.6 (or later)
+Already installed for NLTK
+
+- dateutil 1.1 or later
+
+ If using pip, easy_install or installing from source, the installer will attempt to download and install python_dateutil from PyPI. 
+Note that python_dateutil also depends on six. 
+pip and other package managers should handle installing that secondary dependency automatically.
+
+- pyparsing
+
+ If using pip, easy_install or installing from source, the installer will attempt to download and install pyparsing from PyPI.
+
+- six 1.4 or later
+
+ Also a dependency of dateutil.
+
+- pytz
+
+- libpng 1.2 (or later)
+
+ To be installed via MinGW 
+
+ libpng requires zlib.
+
+ In MSYS:
+
+        wget http://zlib.net/zlib-1.2.8.tar.gz
+        tar xvfz zlib-1.2.8.tar.gz
+        cd zlib-1.2.8
+        make -f win32/Makefile.gcc BINARY_PATH=/usr/local/bin INCLUDE_PATH=/usr/local/include LIBRARY_PATH=/usr/local/lib install
+        cd ..
+    
+ then proceed with
+    
+        wget http://sourceforge.net/projects/libpng/files/libpng15/older-releases/1.5.16/libpng-1.5.16.tar.xz/download
+        tar xvfJ libpng-1.5.16.tar.xz
+        cd libpng-1.5.16
+        mv INSTALL INSTALL.txt
+        ./configure
+        make install
+        cd ..
+
+- freetype 2.3 or later
+
+ In MSYS:
+
+        wget http://sourceforge.net/projects/libpng/files/libpng15/older-releases/1.5.16/libpng-1.5.16.tar.xz/download
+        tar xvfJ libpng-1.5.16.tar.xz
+        cd libpng-1.5.16
+        mv INSTALL INSTALL.txt
+        ./configure
+        make install
+        cd ..
