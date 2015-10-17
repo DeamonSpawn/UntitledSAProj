@@ -14,7 +14,7 @@ Tweepy - The fastest way to install is using pip
  
     pip install tweepy
 
-or alternatively use the GitHub repositry(we recomend this method for windows for the following [modifications]() to be made)
+or alternatively use the GitHub repositry(we recomend this method for windows for the following [modifications](https://github.com/DeamonSpawn/UntitledSAProj#modifications-made) to be made)
     
     git clone https://github.com/tweepy/tweepy.git
     cd tweepy
