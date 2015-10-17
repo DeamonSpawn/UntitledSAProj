@@ -4,33 +4,38 @@ This is a sentiment analysis project in python using twitter and it's API
 Implementation of tweepy
 ========================
 
- __Libraries used so far:__
+<h2>Libraries used so far:</h2>
  
  For Python 3.4 and above
 
- __For Windows:__
+<h3>For Windows:</h3>
 
 Tweepy - The fastest way to install is using pip
  
     pip install tweepy
 
-or alternatively use the GitHub repositry
+or alternatively use the GitHub repositry(we recomend this method for windows for the following [modifications]() to be made)
     
     git clone https://github.com/tweepy/tweepy.git
     cd tweepy
     python setup.py install
+    
+<h3>For Linux:</h3>
+If you have python 3.4.3 or higher you have pip installed
+The same instructions for windows with pip can be performed in linux
+
+<h3>Usage:</h3>
 
 Standard example to pull twitter feeds based on
 
    [Streaming tweets example](https://github.com/tweepy/tweepy/blob/master/examples/streaming.py)
 
-Test code :
-Extracting only the english language tweets using
-    [twitter_streaming.py](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/Mods/tweepy/streaming.py)
+Test code : Extracting only the english language tweets using
+    [twitter_streaming.py](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/prototypes/tweet_extractor/twitter_streaming.py)
 
-__Modifications made:__
+#<h3>Modifications made:</h3>
 
-Modified tweepys existing [streaming.py](https://github.com/tweepy/tweepy/blob/master/tweepy/streaming.py) of which this is the [modified version](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/prototypes/tweet_extractor/twitter_streaming.py) based on the fix proposed 
+Modified tweepys existing [streaming.py](https://github.com/tweepy/tweepy/blob/master/tweepy/streaming.py) of which this is the [modified version](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/Mods/tweepy/streaming.py) based on the fix proposed 
 
    [Handle content-type header charset value for streaming API #635](https://github.com/tweepy/tweepy/issues/635)
    
@@ -48,36 +53,43 @@ The extraction process can be allowed to run until rate limitation by twitter oc
 
 Implementation of a Wordbank based sentiment score using Patricia Tries
 =======================================================================
-__Libraries used so far:__
+<h2>Libraries used so far:</h2>
  
  For Python 3.4 and above
 
- __For Windows:__
+<h3>For Windows:</h3>
 
 NLTK - The fastest way to install is using pip
 NLTK dependancies:
 
 Numpy - Requires a GNU compiler like [MinGW](http://www.mingw.org/wiki/Getting_Started) or [Visual Studio 2013 or higher](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx) installed
 
-__Using Visual Studio:__
+<h3>Using Visual Studio:</h3>
 The Numpy installation looks for the Visual Studio file _vcvarsall.bat_ by default,
 and installing Visual Studio is sufficient to meet this requirement and install Numpy
     
-__Using MinGW:__
+<h3>Using MinGW:</h3>
 
 - [Install MinGW](http://www.mingw.org/wiki/Getting_Started) with C++ Compiler option checked
 - Add C:\MinGW\bin to your PATH
 
-__Installing MinGW and MSYS__
+<h3>Installing MinGW and MSYS</h3>
 
 Download and run mingw-get-inst (the download link above).
+
 Select "Use pre-packaged repository catalogues".
+
 Review and accept the License agreement.
-Please note that MinGW should be installed to a directory path that doesn't contain any spaces. This method has been tested with a directory path of C:\MinGW.
+
+Please note that MinGW should be installed to a directory path that doesn't contain any spaces.
+
+This method has been tested with a directory path of C:\MinGW.
+
 Select C++ Compiler and MSYS Basic System as optional components.
+
 Wait until every package has been downloaded and installation is finished.
 
-__Setting up MSYS__
+<h3>Setting up MSYS</h3>
 
 Go to your MSYS folder (found at <MinGW installation folder>\msys\1.0, C:\MinGW\msys\1.0 in this example), open etc\fstab with a text editor (for example Notepad) and add the following line at the end of the file:
 
@@ -131,7 +143,6 @@ Then install using either
     pip install numpy
     pip install nltk
     
-
 or alternatively using the Git Repositories
     
     git clone https://github.com/numpy/numpy.git
@@ -140,6 +151,11 @@ or alternatively using the Git Repositories
     git clone https://github.com/nltk/nltk.git
     cd tweepy
     python setup.py install
+    
+    
+<h3>For Linux:</h3>
+If you have python 3.4.3 or higher you have pip installed
+The same instructions for windows with pip can be performed in linux
 
 After NLTK is installed open the Python interpreter and type
     
@@ -147,6 +163,8 @@ After NLTK is installed open the Python interpreter and type
     >>nltk.download
     
 In the NLTK Downloader dialog box select _All packages_ and click the _Download_ button
+
+<h3>Usage:</h3>
 
 Test Code: To evaluate our twitter tweets positive and negative sentiments we implement
 [tweets_score.py](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/prototypes/tweet_score/tweets_score.py).It utilises a Patricia Trie constructed using a python dictionary data structure with wordbanks [negative-words.txt](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/Wordbanks/negative-words.txt) and [positive-words.txt](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/Wordbanks/positive-words.txt) as data. Using these tries we optimise the wordbank search for positive and negative word matches.
@@ -159,38 +177,25 @@ unknown = 120
 
 Plotting the sentiment analysis using Matplotlib
 ===============================================
-__Libraries used so far:__
+<h2>Libraries used so far:</h2>
  
  For Python 3.4 and above
 
- __For Windows:__
+<h3>For Windows:</h3>
 
  Required Dependencies
 
 - numpy 1.6 (or later)
 Already installed for NLTK
 
-- dateutil 1.1 or later
-
- If using pip, easy_install or installing from source, the installer will attempt to download and install python_dateutil from PyPI. 
-Note that python_dateutil also depends on six. 
-pip and other package managers should handle installing that secondary dependency automatically.
-
-- pyparsing
-
- If using pip, easy_install or installing from source, the installer will attempt to download and install pyparsing from PyPI.
-
-- six 1.4 or later
-
- Also a dependency of dateutil.
-
-- pytz
-
 - libpng 1.2 (or later)
 
  To be installed via MinGW 
+If MSYS is not setup the instructions are [here]().
 
- libpng requires zlib.
+ If not installed Open the _MinGW setup_ and select and install the _MSYS basic system package_
+
+ libpng requires zlib to install zlib do the following,
 
  In MSYS:
 
@@ -211,6 +216,8 @@ pip and other package managers should handle installing that secondary dependenc
         cd ..
 
 - freetype 2.3 or later
+ 
+ To be installed via MinGW 
 
  In MSYS:
 
@@ -221,3 +228,19 @@ pip and other package managers should handle installing that secondary dependenc
         ./configure
         make install
         cd ..
+
+- dateutil 1.1 or later
+
+ If using pip, easy_install or installing from source, the installer will attempt to download and install python_dateutil from PyPI. 
+Note that python_dateutil also depends on six. 
+pip and other package managers should handle installing that secondary dependency automatically.
+
+- pyparsing
+
+ If using pip, easy_install or installing from source, the installer will attempt to download and install pyparsing from PyPI.
+
+- six 1.4 or later
+
+ Also a dependency of dateutil.
+
+- pytz
