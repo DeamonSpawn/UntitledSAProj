@@ -10,19 +10,22 @@ Implementation of tweepy
 
 <h3>For Windows:</h3>
 
-Tweepy - The fastest way to install is using pip
- 
-    pip install tweepy
-
-or alternatively use the GitHub repositry(we recomend this method for windows for the following [modifications](https://github.com/DeamonSpawn/UntitledSAProj#modifications-made) to be made)
+Use the GitHub repository
     
     git clone https://github.com/tweepy/tweepy.git
     cd tweepy
+
+Follow modifications](https://github.com/DeamonSpawn/UntitledSAProj#modifications-made)   
+    
     python setup.py install
     
 <h3>For Linux:</h3>
-If you have python 3.4.3 or higher you have pip installed
-The same instructions for windows with pip can be performed in linux
+Download the tweepy GitHub repository from [here](https://github.com/tweepy/tweepy/archive/master.zip)
+Follow modifications](https://github.com/DeamonSpawn/UntitledSAProj#modifications-made) 
+Extract and run the console from the directory and install using the command
+
+    python setup.py install
+
 
 <h3>Usage:</h3>
 
