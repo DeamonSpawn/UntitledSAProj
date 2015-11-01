@@ -113,7 +113,8 @@ def evaluate(source,pos_source,neg_source):
             unknwn=unknwn+1
         pscore=0
         nscore=0
-    #Plotting of bar graph
+    return(pcount,ncount,unknwn,lcount)
+def plotgraph(pcount,ncount,unknwn,lcount):
     fig, ax=plt.subplots()
     rect1=plt.bar([2],pcount,1,color='g')
     rect2=plt.bar([0],ncount,1,color='r')
@@ -128,4 +129,4 @@ def evaluate(source,pos_source,neg_source):
     ax.set_xticklabels([' ','Negative',' ','Unknown',' ','Positive'])    
     plt.show()
     #print(rejectlist)
-evaluate('tweetsansJSON.txt','positive-words.txt','negative-words.txt')
+plotgraph(*evaluate('tweetsansJSON.txt','positive-words.txt','negative-words.txt'))
