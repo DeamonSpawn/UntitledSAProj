@@ -54,8 +54,8 @@ The extraction process can be allowed to run until rate limitation by twitter oc
 
     Ctrl+c
 
-Implementation of a Wordbank based sentiment score using Patricia Tries
-=======================================================================
+Implementation of a Wordbank based sentiment score using Patricia Tries and Plotting the sentiment analysis using Matplotlib
+============================================================================================================================
 <h2>Libraries used so far:</h2>
  
  For Python 3.4 and above
@@ -167,26 +167,9 @@ After NLTK is installed open the Python interpreter and type
     
 In the NLTK Downloader dialog box select _All packages_ and click the _Download_ button
 
-<h3>Usage:</h3>
-
-Test Code: To evaluate our twitter tweets positive and negative sentiments we implement
-[tweets_score.py](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/src/tweets_score.py). It utilises a Patricia Trie constructed using a python dictionary data structure with wordbanks [negative-words.txt](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/lib/negative-words.txt) and [positive-words.txt](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/lib/positive-words.txt) as data. Using these tries we optimise the wordbank search for positive and negative word matches.
-Test Tweet data used in this example is [here](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/test/tweetsansJSON.txt).
-_Output_
- 
-positive = 78
-negative = 20
-unknown = 120
-
-Plotting the sentiment analysis using Matplotlib
-===============================================
-<h2>Libraries used so far:</h2>
- 
- For Python 3.4 and above
+Matplotlib Dependencies:
 
 <h3>For Windows:</h3>
-
- Required Dependencies
 
 - numpy 1.6 (or later)
 Already installed for NLTK
@@ -247,3 +230,21 @@ pip and other package managers should handle installing that secondary dependenc
  Also a dependency of dateutil.
 
 - pytz
+
+
+<h3>Usage:</h3>
+
+Test Code: To evaluate our twitter tweets positive and negative sentiments we implement
+[tweets_score.py](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/src/tweets_score.py). It utilises a Patricia Trie constructed using a python dictionary data structure with wordbanks [negative-words.txt](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/lib/negative-words.txt) and [positive-words.txt](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/lib/positive-words.txt) as data. Using these tries we optimise the wordbank search for positive and negative word matches.
+Test Tweet data used in this example is [here](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/test/tweetsansJSON.txt).
+_Output_
+ 
+positive = 78
+negative = 20
+unknown = 120
+
+Shown by a plot using pythons Matplotlib
+![plot_tweetsansJSON] (https://github.com/DeamonSpawn/UntitledSAProj/blob/master/images/plot_tweetsansJSON.png)
+
+
+ 
