@@ -50,7 +50,7 @@ def load_wordbank(source):
             print(e)
             break
     return bankwords
-negation=make_trie(["no", "not", "-n’t", "never", "less", "without","barely", "hardly", "rarely", "no longer", "no more", "no way", "no where", "by no means", "at no time"])
+negation=make_trie(["no", "not", "-n't", "never", "less", "without","barely", "hardly", "rarely", "no longer", "no more", "no way", "no where", "by no means", "at no time"])
 def chk_negation(token_set):
     current_dict = negation
     count = len(token_set)
@@ -129,4 +129,4 @@ def plotgraph(pcount,ncount,unknwn,lcount):
     ax.set_xticklabels([' ','Negative',' ','Unknown',' ','Positive'])    
     plt.show()
     #print(rejectlist)
-plotgraph(*evaluate('tweetsansJSON.txt','positive-words.txt','negative-words.txt'))
+plotgraph(*evaluate('../test/tweetsansJSON.txt','../lib/positive-words.txt','../lib/negative-words.txt'))
