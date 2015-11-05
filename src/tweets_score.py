@@ -90,12 +90,14 @@ def evaluate(source,pos_source,neg_source):
         for token in tokenized:
             token_set.append(token.lower())
             if (in_trie(postrie , token.lower())):
+                del token_set[-1]
                 if(chk_negation(token_set)):
                     nscore=nscore+1
                     continue
                 else:
                     pscore=pscore+1
             elif (in_trie(negtrie , token.lower())):
+                del token_set[-1]
                 if(chk_negation(token_set)):
                     pscore=pscore+1
                     continue
