@@ -60,7 +60,7 @@ Implementation of a Wordbank based sentiment score using Patricia Tries and Plot
 <h2>Libraries used so far:</h2>
  
  For Python 3.4 and above
-<h3>Installing NLTK:</h3>
+<h2>Installing NLTK:</h2>
 <h3>For Windows:</h3>
 
 NLTK - The fastest way to install is using pip
@@ -169,8 +169,7 @@ After NLTK is installed open the Python interpreter and type
 In the NLTK Downloader dialog box select _All packages_ and click the _Download_ button
 
 
-<h3>Installing Matplotlib:</h3>
-
+<h2>Installing Matplotlib:</h2>
 <h3>For Windows:</h3>
 
 Matplotlib Dependencies:
@@ -239,8 +238,13 @@ pip and other package managers should handle installing that secondary dependenc
 <h3>Usage:</h3>
 
 Test Code: To evaluate our twitter tweets positive and negative sentiments we implement
-[tweets_score.py](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/src/tweets_score.py). It utilises a Patricia Trie constructed using a python dictionary data structure with wordbanks [negative-words.txt](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/lib/negative-words.txt) and [positive-words.txt](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/lib/positive-words.txt) as data. Using these tries we optimise the wordbank search for positive and negative word matches.
+[tweets_score.py](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/src/tweets_score.py). 
+It utilises a Patricia Trie constructed using a python dictionary data structure 
+with wordbanks [negative-words.txt](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/lib/negative-words.txt) 
+and [positive-words.txt](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/lib/positive-words.txt) as data. 
+Using these tries we optimise the wordbank search for positive and negative word matches.
 Test Tweet data used in this example is [here](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/test/tweetsansJSON.txt).
+
 _Output_
  
 positive = 78
