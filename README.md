@@ -7,7 +7,8 @@ Implementation of tweepy
 <h2>Libraries used so far:</h2>
  
  For Python 3.4 and above
-
+ 
+<h2>Installing Tweepy:</h2>
 <h3>For Windows:</h3>
 
 Use the GitHub repository
@@ -59,7 +60,7 @@ Implementation of a Wordbank based sentiment score using Patricia Tries and Plot
 <h2>Libraries used so far:</h2>
  
  For Python 3.4 and above
-
+<h3>Installing NLTK:</h3>
 <h3>For Windows:</h3>
 
 NLTK - The fastest way to install is using pip
@@ -167,9 +168,12 @@ After NLTK is installed open the Python interpreter and type
     
 In the NLTK Downloader dialog box select _All packages_ and click the _Download_ button
 
-Matplotlib Dependencies:
+
+<h3>Installing Matplotlib:</h3>
 
 <h3>For Windows:</h3>
+
+Matplotlib Dependencies:
 
 - numpy 1.6 (or later)
 Already installed for NLTK
@@ -177,7 +181,7 @@ Already installed for NLTK
 - libpng 1.2 (or later)
 
  To be installed via MinGW 
-If MSYS is not setup the instructions are [here]().
+If MSYS is not setup the instructions are [here](https://github.com/DeamonSpawn/UntitledSAProj#setting-up-msys).
 
  If not installed Open the _MinGW setup_ and select and install the _MSYS basic system package_
 
