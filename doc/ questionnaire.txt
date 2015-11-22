@@ -1,0 +1,44 @@
+Project Roadmap:
+Q. What are you building?
+AM > A system identifies and categorizes opinions expressed about a specific topic/subject on twitter.
+
+Q. Who is the intended audience of the product?
+AM > [Fill this up]
+
+Q. What are the other opinion mining projects that have been created?
+AM > [Fill this up]
+
+Q. How is your project different from existing work?
+AM > Do you have your own implementation of opinion mining? Are you improving an existing project? 
+
+Q. How does the system work?
+AM > Give a high level description of how a user would use the system. For example, the user is provided a searchbox where he types in his/her query. and then the system processes his/her request to generate some graphs etc.
+
+Q. What type of queries will the system accept?
+AM > What is the query structure? What is the criteria for acceptable queries? How do you handle invalid queries?
+
+Q. Would there be a syntax for queries?
+AM > Would the user have to use a query syntax or would he provide a query in english and then the system would parse it?
+
+Q. Are there limitations of query parsing?
+AM > What would be categorized as valid queries and invalid queries?
+
+Q. Would tweet collection be realtime or would the user have to specify a time period?
+AM > Fill your response here. I'm guessing its going to be realtime, since your using the Streaming API.
+
+Q. How many tweets are being collected or for what duration of time will tweets be collected?
+AM > [Fill this up]
+
+Q. How are you mining the tweets for opinions?
+AM > Describe the algorithm you're using to process the fetched tweets.
+
+Q. What are the limitations of the algorithm?
+AM > Describe limitations if any.
+
+Q. What is the output from processing the tweets?
+AM > Describe the statistics that would be generated from processing the tweets.
+
+Q. How will users access the system?
+AM > Will it be a web app? Mobile app? I would suggest building a web app and not bother with the mobile app.
+
+
