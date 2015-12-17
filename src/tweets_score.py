@@ -5,7 +5,6 @@ negation=dict()
 postrie=dict()
 negtrie=dict()
 rejectlist=[]
-token_set=[]
 
 #regex word search
 def word_in_text(word, text):
@@ -50,29 +49,6 @@ def load_wordbank(source):
             print(e)
             break
     return bankwords
-negation=make_trie(["no", "not", "-n't", "never", "less", "without","barely", "hardly", "rarely", "no longer", "no more", "no way", "no where", "by no means", "at no time"])
-def chk_negation(token_set):
-    current_dict = negation
-    count = len(token_set)
-    word = token_set[-count]
-    for letter in word:
-        if letter in current_dict:
-            current_dict = current_dict[letter]
-        else:
-                return False
-    else:
-        if _end in current_dict:
-            print(token_set," >>hit<< ")
-            del token_set[:]
-            return True
-        elif ' ' in current_dict:
-            if(count != 1):
-                count=count-1
-            word = token_set[-count]
-        else:
-            print(token_set)
-            del token_set[:]
-            return False
 # word hit score
 def evaluate(source,pos_source,neg_source):
     pscore=0
@@ -85,28 +61,27 @@ def evaluate(source,pos_source,neg_source):
     negtrie = make_trie(load_wordbank(neg_source))
     f = open(source,'r')
     for line in f:
-        lcount=lcount+1   
+        lcount=lcount+1  
+        negation = re.compile(r'(?<= no)\s\w+|(?<=sn\'t)\s\w+|(?<= not)\s\w+|\s(?<= less)\s\w+|(?<= without)\s\w+|(?<=barely)\s\w+|(?<= hardly)\s\w+|(?<= rarely)\s\w+|(?<= no longer)\s\w+|(?<= no more)\s\w+|(?<= no way)\s\w+|(?<= no where)\s\w+|(?<= by no means)\s\w+|(?<= at no time)\s\w+', re.IGNORECASE)
+        opp_sent = [x.strip(" ") for x in re.findall(negation,line)]
         tokenized = nltk.word_tokenize(line)
-        for token in tokenized:
-            token_set.append(token.lower())
+        sans_neg = [word for word in tokenized if word not in opp_sent]
+        for token in sans_neg:
             if (in_trie(postrie , token.lower())):
-                del token_set[-1]
-                if(chk_negation(token_set)):
-                    nscore=nscore+1
-                    continue
-                else:
                     pscore=pscore+1
             elif (in_trie(negtrie , token.lower())):
-                del token_set[-1]
-                if(chk_negation(token_set)):
-                    pscore=pscore+1
-                    continue
-                else:
                     nscore=nscore+1
             else:
                 rejectlist.append(token.lower())
                 continue
-            
+        for token in opp_sent:
+            if (in_trie(postrie , token.lower())):
+                    nscore=nscore+1
+            elif (in_trie(negtrie , token.lower())):
+                    pscore=pscore+1
+            else:
+                rejectlist.append(token.lower())
+                continue
         if(pscore>nscore):
             pcount=pcount+1
         elif(nscore>pscore):
@@ -115,6 +90,7 @@ def evaluate(source,pos_source,neg_source):
             unknwn=unknwn+1
         pscore=0
         nscore=0
+        print(sans_neg)
     return(pcount,ncount,unknwn,lcount)
 def plotgraph(pcount,ncount,unknwn,lcount):
     fig, ax=plt.subplots()
