@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import re,nltk
 import matplotlib.pyplot as plt
 _end = '_end_'
