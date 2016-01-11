@@ -11,21 +11,27 @@ Implementation of tweepy
 <h2>Installing Tweepy:</h2>
 <h3>For Windows:</h3>
 
-Use the GitHub repository
+Using the GitHub repository
+   
+Install by running these commands in command prompt:
     
     git clone https://github.com/tweepy/tweepy.git
-    cd tweepy
-
-Follow modifications](https://github.com/DeamonSpawn/UntitledSAProj#modifications-made)   
-    
+    cd tweepy   
     python setup.py install
+
+Using pip
+
+    pip install tweepy
     
 <h3>For Linux:</h3>
 Download the tweepy GitHub repository from [here](https://github.com/tweepy/tweepy/archive/master.zip)
-Follow modifications](https://github.com/DeamonSpawn/UntitledSAProj#modifications-made) 
 Extract and run the console from the directory and install using the command
 
-    python setup.py install
+    python setup.py 
+    
+Using pip
+
+    pip install tweepy
 
 
 <h3>Usage:</h3>
@@ -36,12 +42,6 @@ Standard example to pull twitter feeds based on
 
 Test code : Extracting only the english language tweets using
     [twitter_streaming.py](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/src/twitter_streaming.py)
-
-#<h3>Modifications made:</h3>
-
-Modified tweepys existing [streaming.py](https://github.com/tweepy/tweepy/blob/master/tweepy/streaming.py) of which this is the [modified version](https://github.com/DeamonSpawn/UntitledSAProj/blob/master/lib/tweepy/streaming.py) based on the fix proposed 
-
-   [Handle content-type header charset value for streaming API #635](https://github.com/tweepy/tweepy/issues/635)
    
 Output of the tweet stream is in the JSON format from which the "text:" specifies the tweet which is extracted from the JSON text.
 
@@ -66,7 +66,8 @@ Implementation of a Wordbank based sentiment score using Patricia Tries and Plot
 NLTK - The fastest way to install is using pip
 NLTK dependancies:
 
-Numpy - Requires a GNU compiler like [MinGW](http://www.mingw.org/wiki/Getting_Started) or [Visual Studio 2013 or higher](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx) installed
+Numpy - Requires a GNU compiler like [MinGW](http://www.mingw.org/wiki/Getting_Started) or 
+[Visual Studio 2013 or higher](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx) installed
 
 <h3>Using Visual Studio:</h3>
 The Numpy installation looks for the Visual Studio file _vcvarsall.bat_ by default,
@@ -95,13 +96,16 @@ Wait until every package has been downloaded and installation is finished.
 
 <h3>Setting up MSYS</h3>
 
-Go to your MSYS folder (found at <MinGW installation folder>\msys\1.0, C:\MinGW\msys\1.0 in this example), open etc\fstab with a text editor (for example Notepad) and add the following line at the end of the file:
+Go to your MSYS folder (found at <MinGW installation folder>\msys\1.0, C:\MinGW\msys\1.0 in this example), 
+open etc\fstab with a text editor (for example Notepad) and add the following line at the end of the file:
 
     C:\MinGW\   /usr/local
 
 On Windows Vista and newer, you'll need additional steps to make MSYS fully work if User Account Control is enabled (it is by default).
 
-Go to your MSYS folder (C:\MinGW\msys\1.0 here), open msys.bat with a text editor (right-click -> Open With -> Notepad or equivalents) and add the following line after   @echo off:
+Go to your MSYS folder (C:\MinGW\msys\1.0 here), open msys.bat with a text editor (right-click -> Open With -> Notepad or equivalents) 
+and add the following line after   
+@echo off:
 
     cd "C:\MinGW\msys\1.0"
 
