@@ -256,7 +256,6 @@ negative = 20
 unknown = 120
 
 Shown by a plot using pythons Matplotlib
-![plot_tweetsansJSON] (https://github.com/DeamonSpawn/UntitledSAProj/blob/master/images/plot_tweetsansJSON.png)
 
-
+![plot_tweetsansJSON](https://github.com/DeamonSpawn/UntitledSAProj/raw/master/res/plot_tweetsansJSON.png)
  
