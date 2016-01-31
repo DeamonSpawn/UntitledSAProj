@@ -9,10 +9,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.naive_bayes import BernoulliNB
 from sklearn.svm import NuSVC
 from nltk.classify.util import accuracy
-def trained_sk_classifier(classifier_algo,train_feats):
-    sk_classifier = SklearnClassifier(classiffier_algo)
-    sk_classifier.train(train_feats)
-    return sk_classifier
 '''
     from nltk.corpus.reader import CategorizedPlaintextCorpusReader
     is for loading a file based corpus,
@@ -44,6 +40,19 @@ def trained_sk_classifier(classifier_algo,train_feats):
     a function to check the precission and recall of the classifiers
     
 '''
-    
-    
- 
+def trained_sk_classifier(classifier_algo,train_feats):
+    return SklearnClassifier(classiffier_algo).train(train_feats)
+def trained_simple_nb_classifier(train_feats):
+    return NaiveBayesClassifier.train(train_feats)
+def get_feats_from_tweet(tweet_message):
+    tweet_feats = bag_of_non_stopwords(tweet_message)
+    return tweet_feats
+def get_tweet_sentiment(tweet_message,algo = 'fastnb'):
+    tweet_feats = get_feats_from_tweet(tweet_message)
+    train_feats = label_feats_from_corpus(movie_reviews)
+    if(mode == 'fastnb'):
+        pos_neg_classifier = trained_simple_nb_classifier(train_feats)
+        
+    else:
+        pos_neg_classifier = trained_sk_classifier(algo,train_feats)
+    return pos_neg_classifier.classify(tweet_feats)
